@@ -1,0 +1,120 @@
+@import "utils";
+@import "config";
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+h1,h2,h3{
+  font-family: 'Arvo', serif;
+  letter-spacing: 0.2px;
+}
+
+body {
+  font-family: $font-stack;
+  line-height: 1.6;
+  color: $main-black;
+  letter-spacing: 0.1px;
+}
+
+a {
+  color: $link-color;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.spinner{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+header {
+  background-color: $light-color;
+  position: fixed;
+  width: 100%;
+
+  a{
+    font-weight: normal;
+  }
+}
+
+header nav {
+  width: 90%;
+  margin:auto;
+  ul {
+    display: flex;
+    list-style: none;
+  }
+  li {
+    padding: 1rem;
+  }
+}
+
+.book-item {
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  grid-column-gap: 1.5rem;
+  margin-bottom: 1.2rem;
+
+  img {
+    display: inline;
+  }
+
+  a {
+    display: inline-block;
+
+    &:hover{
+      color:lighten($link-color,  10%);
+    }
+  }
+}
+
+
+.book-details{
+
+    a{
+      display: block;
+    }
+
+    .book-info{
+      font-size: 1.2rem;
+      text-align: center;
+    }
+
+    &-heading{
+      text-align: center;
+    }
+    &-img{
+      display: block;
+      margin: 0.5rem auto;
+    }
+}
+
+.section-{
+   &details,&favorites{
+    padding: 5rem;
+   }
+}
+
+.star {
+  font-size: 2rem;
+  vertical-align: middle;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &-favorite {
+    fill: darken(yellow, 5%);
+  }
+
+  &-grey {
+    fill: #ccc;
+  }
+
+}
+
+@import './mobile';
